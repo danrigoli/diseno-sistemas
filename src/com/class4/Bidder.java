@@ -1,6 +1,6 @@
 package com.class4;
 
-public class Bidder implements Observer {
+public abstract class Bidder implements Observer { //
 
     private String name;
 
@@ -9,14 +9,19 @@ public class Bidder implements Observer {
     }
 
     @Override
-    public void update(Observer buyer, double price) {
-        if (!this.equals(buyer)) System.out.println("Aumentaron la oferta a " + price);
-        else System.out.println("Aumentaste la oferta a " + price);
+    public double update(Product product) {
+        if (this.equals(product.getBuyer())) {
+            return 0;
+        } else {
+            System.out.println("DEBUG: " + product.getCurrentBid());
+            return bid(product.getCurrentBid());
+        }
     }
 
     public String getName() {
         return name;
     }
 
+    public abstract double bid(double current);
 
 }
