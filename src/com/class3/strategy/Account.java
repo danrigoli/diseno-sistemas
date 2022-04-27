@@ -1,4 +1,4 @@
-package com.class3.interfaz;
+package com.class3.strategy;
 
 public abstract class Account implements TransferStrategy {
     private double balance;

@@ -1,13 +1,12 @@
-package com.class3.template;
+package com.class3.template_method;
 
-public class CaAccount extends Account {
+public class CcAccount extends Account {
 
-    private double commission = 0.05;
-
+    private double negative = 3000;
 
     @Override
     protected void removeFromAccount(double amount) throws Exception{
-        if (this.getBalance() >= amount) {
+        if (this.getBalance() + negative > amount) {
             this.setBalance(this.getBalance() - amount);
         } else {
             throw new Exception("No tiene el saldo disponible");
@@ -16,12 +15,12 @@ public class CaAccount extends Account {
 
     @Override
     protected void addToAccount(double amount) {
-        this.setBalance(this.getBalance() + amount * (1 - commission));
+        this.setBalance(getBalance() + amount);
     }
 
-    CaAccount(double amount) {
+    CcAccount(double amount) {
         super(amount);
     }
 
-
 }
+

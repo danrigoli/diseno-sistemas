@@ -1,4 +1,4 @@
-package com.class3.template;
+package com.class3.template_method;
 
 public abstract class Account {
     private double balance;
