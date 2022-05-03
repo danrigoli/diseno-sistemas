@@ -3,10 +3,15 @@ package com.state;
 public class Contract {
 
     private String information;
+    private static Contract instance;
 
+    public static Contract getInstance() {
+        if (Contract.instance == null) Contract.instance = new Contract("");
+        return Contract.instance;
+    }
     private State state;
 
-    public Contract(String information) {
+    private Contract(String information) {
         this.information = information;
         this.state = new Created(this);
     }
@@ -37,5 +42,9 @@ public class Contract {
 
     protected String getInformation() {
         return information;
+    }
+
+    protected State getState() {
+        return this.state;
     }
 }
