@@ -1,4 +1,4 @@
-package com.state;
+package com.state_singleton;
 
 public class Closed implements State {
 

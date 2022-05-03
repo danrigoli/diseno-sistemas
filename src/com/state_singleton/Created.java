@@ -1,16 +1,17 @@
-package com.state;
+package com.state_singleton;
 
-public class Edited implements State{
+public class Created implements State{
 
     private final Contract contract;
 
-    public Edited(Contract contract) {
+    public Created(Contract contract) {
         this.contract = contract;
     }
 
     @Override
     public void edit(String information) {
         this.contract.setInformation(information);
+        this.contract.changeState(new Edited(this.contract));
     }
 
     @Override
@@ -20,12 +21,12 @@ public class Edited implements State{
 
     @Override
     public String read() {
-        // this does nothing because it is edited not confirmed
+//      nothing
         return null;
     }
 
     @Override
     public void close() {
-//        this does nothing because it is edited not confirmed
+//      nothing
     }
 }
