@@ -4,10 +4,11 @@ package com.strategy;
 public class Main {
 
     public static void main(String[] args) {
-        Account senderAccount = new CaAccount(3000);
-        Account receiverAccount = new CcAccount(0);
+        TransferStrategy senderAccount = new CaAccount(3000);
+        TransferStrategy receiverAccount = new CcAccount(0);
         try {
             senderAccount.transfer(receiverAccount, 3000);
+            senderAccount.transfer(receiverAccount, 2000);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

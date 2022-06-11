@@ -2,12 +2,16 @@ package com.state_singleton;
 
 public interface State {
 
-    Contract contract = null;
+    static State instance = null;
 
-    void edit(String information);
-    String read();
+    static State getInstance(){
+        return instance;
+    };
 
-    void confirm();
+    void edit(Contract contract, String information);
+    String read(Contract contract);
 
-    void close();
+    void confirm(Contract contract);
+
+    void close(Contract contract);
 }

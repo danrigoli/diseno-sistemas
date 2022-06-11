@@ -2,30 +2,32 @@ package com.state_singleton;
 
 public class Edited implements State{
 
-    private final Contract contract;
+    private Edited(){};
+    static private Edited instance;
 
-    public Edited(Contract contract) {
-        this.contract = contract;
+    public static State getInstance() {
+        if (Edited.instance == null) Edited.instance = new Edited();
+        return Edited.instance;
     }
 
     @Override
-    public void edit(String information) {
-        this.contract.setInformation(information);
+    public void edit(Contract contract, String information) {
+        contract.setInformation(information);
     }
 
     @Override
-    public void confirm() {
-        this.contract.changeState(new Confirmed(this.contract));
+    public void confirm(Contract contract) {
+        contract.changeState(Confirmed.getInstance());
     }
 
     @Override
-    public String read() {
+    public String read(Contract contract) {
         // this does nothing because it is edited not confirmed
         return null;
     }
 
     @Override
-    public void close() {
+    public void close(Contract contract) {
 //        this does nothing because it is edited not confirmed
     }
 }

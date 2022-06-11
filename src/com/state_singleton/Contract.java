@@ -3,17 +3,11 @@ package com.state_singleton;
 public class Contract {
 
     private String information;
-    private static Contract instance;
-
-    public static Contract getInstance() {
-        if (Contract.instance == null) Contract.instance = new Contract("");
-        return Contract.instance;
-    }
     private State state;
 
-    private Contract(String information) {
+    Contract(String information) {
         this.information = information;
-        this.state = new Created(this);
+        this.state = Created.getInstance();
     }
 
     protected void changeState(State state) {
@@ -21,19 +15,19 @@ public class Contract {
     }
 
     public String read() {
-        return this.state.read();
+        return this.state.read(this);
     }
 
     public void edit(String information) {
-        this.state.edit(information);
+        this.state.edit(this, information);
     }
 
     public void confirm() {
-        this.state.confirm();
+        this.state.confirm(this);
     }
 
     public void close() {
-        this.state.close();
+        this.state.close(this);
     }
 
     protected void setInformation(String information) {

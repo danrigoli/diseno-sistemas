@@ -18,7 +18,7 @@ public abstract class Account {
         this.balance = balance;
     }
 
-    public void transfer(Account to, double amount) throws Exception{
+    final public void transfer(Account to, double amount) throws Exception{
         this.removeFromAccount(amount);
         to.addToAccount(amount);
     }

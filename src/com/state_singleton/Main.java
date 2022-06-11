@@ -3,7 +3,8 @@ package com.state_singleton;
 public class Main {
 
     public static void main(String[] args) {
-        Contract contract = Contract.getInstance();
+        Contract contract = new Contract("Info" +
+                "");
 
         System.out.println("This should return null because contract is not confirmed: " + contract.read());
         System.out.println(contract.getState());
@@ -17,16 +18,9 @@ public class Main {
         contract.close();
         System.out.println(contract.getState());
         contract.edit("This won't work either");
-        System.out.println("This should return null because contract is closed: " + contract.read());
+        System.out.println("This should return info because contract is closed: " + contract.read());
 
         System.out.println("\n ______________________________________________________ \n");
-
-        Contract secondContract = Contract.getInstance(); // mismo objeto que el de arriba
-        System.out.println("Current state: " + secondContract.getState());
-        secondContract.edit("Hello World!"); // this won't do anything because it is already closed
-        secondContract.confirm();
-        secondContract.edit("This won't work");
-        System.out.println("This should return null because contract is closed: " + secondContract.read());
 
     }
 }

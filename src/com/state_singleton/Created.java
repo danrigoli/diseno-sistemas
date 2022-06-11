@@ -2,31 +2,33 @@ package com.state_singleton;
 
 public class Created implements State{
 
-    private final Contract contract;
+    private Created(){};
+    static private Created instance;
 
-    public Created(Contract contract) {
-        this.contract = contract;
+    public static State getInstance() {
+        if (Created.instance == null) Created.instance = new Created();
+        return Created.instance;
     }
 
     @Override
-    public void edit(String information) {
-        this.contract.setInformation(information);
-        this.contract.changeState(new Edited(this.contract));
+    public void edit(Contract contract, String information) {
+        contract.setInformation(information);
+        contract.changeState(Edited.getInstance());
     }
 
     @Override
-    public void confirm() {
-        this.contract.changeState(new Confirmed(this.contract));
+    public void confirm(Contract contract) {
+        contract.changeState(Confirmed.getInstance());
     }
 
     @Override
-    public String read() {
+    public String read(Contract contract) {
 //      nothing
         return null;
     }
 
     @Override
-    public void close() {
+    public void close(Contract contract) {
 //      nothing
     }
 }
