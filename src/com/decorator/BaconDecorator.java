@@ -9,4 +9,8 @@ public class BaconDecorator extends BaseDecoratorMenuItem {
     public String getDescription() {
         return super.getDescription() + " con bacon";
     }
+
+    public int calculate() {
+        return super.calculate() + 100;
+    }
 }

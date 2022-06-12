@@ -12,4 +12,9 @@ public class BaseDecoratorMenuItem implements MenuItem {
         return decorator.getDescription();
     }
 
+    @Override
+    public int calculate() {
+        return decorator.calculate();
+    }
+
 }

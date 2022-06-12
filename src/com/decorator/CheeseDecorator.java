@@ -9,4 +9,8 @@ public class CheeseDecorator extends BaseDecoratorMenuItem {
     public String getDescription() {
         return super.getDescription() + " con queso";
     }
+
+    public int calculate() {
+        return super.calculate() + 10;
+    }
 }

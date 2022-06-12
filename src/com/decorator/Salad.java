@@ -7,4 +7,9 @@ public class Salad implements MenuItem {
         return "Ensalada";
     }
 
+    @Override
+    public int calculate() {
+        return 50;
+    }
+
 }

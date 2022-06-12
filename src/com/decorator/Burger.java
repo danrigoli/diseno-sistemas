@@ -7,4 +7,9 @@ public class Burger implements MenuItem {
         return "Burger";
     }
 
+    @Override
+    public int calculate() {
+        return 150;
+    }
+
 }

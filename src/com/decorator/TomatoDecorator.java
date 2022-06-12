@@ -7,6 +7,10 @@ public class TomatoDecorator extends BaseDecoratorMenuItem {
     }
 
     public String getDescription() {
-        return super.getDescription() + " con tomato";
+        return super.getDescription() + " con tomate";
+    }
+
+    public int calculate() {
+        return super.calculate() + 20;
     }
 }
