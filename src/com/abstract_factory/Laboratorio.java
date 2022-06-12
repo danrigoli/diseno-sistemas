@@ -1,10 +1,10 @@
 package com.abstract_factory;
 
-public class Application {
+public class Laboratorio {
     private OperatingSystem operatingSystem;
     private Language language;
 
-    public Application(ClassFactory factory) {
+    public Laboratorio(LaboratorioAbstractFactory factory) {
         operatingSystem = factory.createOperatingSystem();
         language = factory.createLanguage();
     }

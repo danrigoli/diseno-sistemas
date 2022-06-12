@@ -1,14 +1,14 @@
 package com.abstract_factory;
 
-public class Labo3Factory implements ClassFactory {
+public class JavaFactory implements LaboratorioAbstractFactory {
 
     @Override
     public Language createLanguage() {
-        return new CLanguage();
+        return new JavaLanguage();
     }
 
     @Override
     public OperatingSystem createOperatingSystem() {
-        return new LinuxOperatingSystem();
+        return new WinOperatingSystem();
     }
 }

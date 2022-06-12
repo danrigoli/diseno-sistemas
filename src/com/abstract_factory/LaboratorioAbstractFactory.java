@@ -1,6 +1,6 @@
 package com.abstract_factory;
 
-public interface ClassFactory {
+public interface LaboratorioAbstractFactory {
     public Language createLanguage();
     public OperatingSystem createOperatingSystem();
 }
