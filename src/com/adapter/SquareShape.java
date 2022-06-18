@@ -11,4 +11,5 @@ public class SquareShape {
     public int getWidth() {
         return width;
     }
+
 }

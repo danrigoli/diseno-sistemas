@@ -1,14 +1,8 @@
 package com.adapter;
 
-public class SquareShapeAdapter extends RoundShape {
-    private final SquareShape squareShape;
+public class SquareShapeAdapter {
 
-    SquareShapeAdapter(SquareShape squareShape) {
-        super(squareShape.getWidth() * Math.sqrt(2) / 2);
-        this.squareShape = squareShape;
-    }
-
-    public double getRadius() {
-        return squareShape.getWidth() * Math.sqrt(2) / 2;
+    public static RoundShape transform(SquareShape squareShape) {
+        return new RoundShape(squareShape.getWidth() * Math.sqrt(2) / 2);
     }
 }
