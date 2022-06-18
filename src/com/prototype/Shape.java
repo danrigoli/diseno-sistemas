@@ -2,35 +2,23 @@ package com.prototype;
 
 public abstract class Shape {
 
-    private String color;
-    private String texture;
+    private String name;
 
-    Shape(String color, String texture) {
-        this.color = color;
-        this.texture = texture;
-    }
+    private Paint paint;
 
-    Shape(Shape source) {
-        this.color = source.color;
-        this.texture = source.texture;
+    Shape(String name, Paint paint) {
+        this.name = name;
+        this.paint = paint;
     }
 
     public abstract Shape clone();
 
-    public String getColor() {
-        return color;
+    public Paint getPaint() {
+        return paint;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getTexture() {
-        return texture;
-    }
-
-    public void setTexture(String texture) {
-        this.texture = texture;
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -42,6 +30,7 @@ public abstract class Shape {
             return false;
         }
         Shape shape = (Shape) o;
-        return color.equals(shape.color) && texture.equals(shape.texture);
+        return name.equals(shape.name) &&
+                paint.equals(shape.paint);
     }
 }

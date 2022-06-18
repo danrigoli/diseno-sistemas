@@ -7,8 +7,8 @@ public class Main {
         square.setSize(12);
 
         SquareBuilder squareBuilder = new SquareBuilder();
-        squareBuilder.setColor("blue");
-        squareBuilder.setSize(15);
+        squareBuilder.withColor("blue");
+        squareBuilder.withColor(15);
         Square squareFromBuilder = squareBuilder.build();
 
         System.out.println("Square creado manualmente");
@@ -21,8 +21,5 @@ public class Main {
         System.out.println("Color: " + squareFromBuilder.getColor());
         System.out.println("-------------------------");
 
-        System.out.println("Square del builder");
-        System.out.println("Size: " + squareBuilder.getSize());
-        System.out.println("Color: " + squareBuilder.getColor());
     }
 }

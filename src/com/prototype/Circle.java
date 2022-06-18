@@ -4,19 +4,18 @@ public class Circle extends Shape {
 
     private double radius;
 
-    Circle(String color, String texture, double radius) {
-        super(color, texture);
+    Circle(String name, Paint paint, double radius) {
+        super(name, paint);
         this.radius = radius;
-    }
-
-    Circle(Circle source) {
-        super(source);
-        this.radius = source.getRadius();
     }
 
     @Override
     public Circle clone() {
-        return new Circle(this);
+        return new Circle(
+                this.getName(),
+                new Paint(this.getPaint().getColor(), this.getPaint().getTexture()),
+                this.getRadius()
+        );
     }
 
     public double getRadius() {

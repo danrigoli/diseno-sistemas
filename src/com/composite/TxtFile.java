@@ -16,13 +16,13 @@ public class TxtFile implements Component {
     }
 
     @Override
-    public void save() {
-        System.out.println("DEBUG: SAVES TXT FILE");
+    public String save() {
+       return "DEBUG: SAVES TXT FILE";
     }
 
     @Override
-    public void delete() {
-        System.out.println("DEBUG: DELETES TXT FILE");
+    public String delete() {
+        return "DELETES TXT FILE";
 
     }
 

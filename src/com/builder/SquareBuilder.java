@@ -11,20 +11,11 @@ public class SquareBuilder {
         return square;
     }
 
-    public int getSize() {
-        return square.getSize();
-    }
-
-    public SquareBuilder setSize(int size) {
+    public SquareBuilder withSize(int size) {
         square.setSize(size);
         return this;
     }
-
-    public String getColor() {
-        return square.getColor();
-    }
-
-    public SquareBuilder setColor(String color) {
+    public SquareBuilder withColor(String color) {
         square.setColor(color);
         return this;
     }

@@ -2,8 +2,8 @@ package com.flyweight;
 
 public interface UnitFly {
 
-    public void attack(String weapon);
-    public void defend(String weapon);
+    public String attack(String weapon);
+    public String defend(String weapon);
     public int getTotalHealth();
 
 }

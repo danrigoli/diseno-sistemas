@@ -16,13 +16,13 @@ public class JsonFile implements Component {
     }
 
     @Override
-    public void save() {
-        System.out.println("DEBUG: SAVES JSON FILE");
+    public String save() {
+        return "SAVES JSON FILE";
     }
 
     @Override
-    public void delete() {
-        System.out.println("DEBUG: DELETES JSON FILE");
+    public String delete() {
+        return "DELETES JSON FILE";
 
     }
 

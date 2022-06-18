@@ -7,24 +7,22 @@ public class Triangle extends Shape {
     private double sideC;
 
 
-    Triangle(String color, String texture, double sideA, double sideB, double sideC) {
-        super(color, texture);
+    Triangle(String name, Paint paint, double sideA, double sideB, double sideC) {
+        super(name, paint);
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
     }
 
-    Triangle(Triangle source) {
-        super(source);
-        this.sideA = source.getSideA();
-        this.sideB = source.getSideB();
-        this.sideC = source.getSideC();
-    }
-
-
     @Override
     public Triangle clone() {
-        return new Triangle(this);
+        return new Triangle(
+            this.getName(),
+            new Paint(this.getPaint().getColor(), this.getPaint().getTexture()),
+            this.getSideA(),
+            this.getSideB(),
+            this.getSideC()
+        );
     }
 
 
@@ -32,23 +30,11 @@ public class Triangle extends Shape {
         return sideA;
     }
 
-    public void setSideA(double sideA) {
-        this.sideA = sideA;
-    }
-
     public double getSideB() {
         return sideB;
     }
 
-    public void setSideB(double sideB) {
-        this.sideB = sideB;
-    }
-
     public double getSideC() {
         return sideC;
-    }
-
-    public void setSideC(double sideC) {
-        this.sideC = sideC;
     }
 }

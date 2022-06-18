@@ -10,13 +10,13 @@ public class SoldierFly implements UnitFly {
     }
 
     @Override
-    public void attack(String weapon) {
-        System.out.println("DEBUG: A SOLDIER ATTACKED WITH " + weapon);
+    public String attack(String weapon) {
+        return "A SOLDIER ATTACKED WITH " + weapon;
     }
 
     @Override
-    public void defend(String weapon) {
-        System.out.println("DEBUG: A SOLDIER DEFENDED WITH " + weapon);
+    public String defend(String weapon) {
+        return "A SOLDIER DEFENDED WITH " + weapon;
     }
 
     @Override

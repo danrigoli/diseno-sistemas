@@ -16,14 +16,15 @@ public class Tank {
 
     }
 
-    public void attack() {
-        this.fly.attack(attackingWeapon);
+    public String attack() {
         this.health -= 20;
+        return this.fly.attack(attackingWeapon);
+
     }
 
-    public void defense() {
-        this.fly.defend(defensiveWeapon);
+    public String defense() {
         this.health -= 10;
+        return this.fly.defend(defensiveWeapon);
     }
 
     public String getAttackingWeapon() {

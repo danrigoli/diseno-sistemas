@@ -13,12 +13,12 @@ public class Soldier {
         this.fly = (SoldierFly) UnitFlyFactory.getFly("Soldier");
     }
 
-    public void attack() {
-        this.fly.attack(attackingWeapon);
+    public String attack() {
+        return this.fly.attack(attackingWeapon);
     }
 
-    public void defense() {
-        this.fly.defend(defensiveWeapon);
+    public String defense() {
+        return this.fly.defend(defensiveWeapon);
     }
 
     public String getAttackingWeapon() {

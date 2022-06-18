@@ -9,14 +9,13 @@ public class TankFly implements UnitFly {
     }
 
     @Override
-    public void attack(String weapon) {
-        System.out.println("DEBUG: A TANK ATTACKED WITH " + weapon);
+    public String attack(String weapon) {
+        return "A TANK ATTACKED WITH " + weapon;
     }
 
     @Override
-    public void defend(String weapon) {
-        System.out.println("DEBUG: A TANK DEFENDED WITH " + weapon);
-
+    public String defend(String weapon) {
+        return "A TANK DEFENDED WITH " + weapon;
     }
 
     @Override

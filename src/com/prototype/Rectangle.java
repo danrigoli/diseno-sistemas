@@ -5,21 +5,21 @@ public class Rectangle extends Shape {
     private double width;
     private double height;
 
-    Rectangle(String color, String texture, double width, double height) {
-        super(color, texture);
+    Rectangle(String name, Paint paint, double width, double height) {
+        super(name, paint);
         this.width = width;
         this.height = height;
     }
 
-    Rectangle(Rectangle source) {
-        super(source);
-        this.width = source.getWidth();
-        this.height = source.getWidth();
-    }
 
     @Override
     public Rectangle clone() {
-        return new Rectangle(this);
+        return new Rectangle(
+                this.getName(),
+                new Paint(this.getPaint().getColor(), this.getPaint().getTexture()),
+                this.getWidth(),
+                this.getHeight()
+        );
     }
 
     public double getWidth() {

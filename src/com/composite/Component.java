@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface Component {
     String open();
-    void save();
-    void delete();
+    String save();
+    String delete();
 
     void add(Component child) throws Exception;
     void remove(Component child) throws Exception;

@@ -2,9 +2,12 @@ package com.prototype;
 
 public class Main {
     public static void main(String[] args) {
-        Circle circle = new Circle("azul", "matte", 12);
-        Rectangle rectangle = new Rectangle("rojo", "brilloso", 10, 14);
-        Triangle triangle = new Triangle("verde", "rugoso", 10, 10, 10);
+
+        Paint paint1 = new Paint("azul", "matte");
+        Paint paint2 = new Paint("rojo", "brilloso");
+        Circle circle = new Circle("Bob el circulo", paint1, 12);
+        Rectangle rectangle = new Rectangle("Rob el rectangulo", paint2, 10, 14);
+        Triangle triangle = new Triangle("Ten el triangulo", paint2, 10, 10, 10);
 
         Circle circleClone = circle.clone();
         Rectangle rectangleClone = rectangle.clone();
@@ -23,6 +26,11 @@ public class Main {
         System.out.println("TRIANGLE");
         System.out.println("Same object: " + (triangle.hashCode() == triangleClone.hashCode()));
         System.out.println("Same fields: " + triangle.equals(triangleClone));
+        System.out.println("--------------------------");
+
+        System.out.println("PAINT");
+        System.out.println("Same object: " + (paint2.hashCode() == triangleClone.getPaint().hashCode()));
+        System.out.println("Same fields: " + paint2.equals(triangleClone.getPaint()));
         System.out.println("--------------------------");
 
     }

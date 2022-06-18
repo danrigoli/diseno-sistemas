@@ -13,11 +13,11 @@ public class VehicleFactory {
         return VehicleFactory.instance;
     }
 
-    public Car createCar(String brand) {
+    public Vehicle createCar(String brand) {
         return new Car(brand);
     }
 
-    public Motorcycle createMotorcycle(int cylinder) {
+    public Vehicle createMotorcycle(int cylinder) {
         return new Motorcycle(cylinder);
     }
 }

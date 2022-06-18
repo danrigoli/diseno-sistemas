@@ -15,6 +15,8 @@ public class Main {
         try {
             folder.getChildren();
             System.out.println(folder.open());
+            System.out.println(folder.save());
+            System.out.println(jsonFile2.delete());
             System.out.println(jsonFile2.open());
             jsonFile2.getChildren();
         } catch (Exception e) {

@@ -6,9 +6,9 @@ public class Main {
         Soldier soldier1 = new Soldier("Escopeta", "Escudo");
         Tank tank = new Tank("Canon", "Agua", 100);
         Tank tank1 = new Tank("Bombas", "Autodestruccion", 0);
-        soldier.attack();
-        soldier1.defense();
-        tank.attack();
-        tank1.defense();
+        System.out.println(soldier.attack());
+        System.out.println(soldier1.defense());
+        System.out.println(tank.defense());
+        System.out.println(tank1.attack());
     }
 }

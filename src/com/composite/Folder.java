@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Folder implements Component {
 
-    List<Component> children;
+    private List<Component> children;
 
     Folder(List<Component> children) {
         this.children = children;
@@ -12,23 +12,22 @@ public class Folder implements Component {
 
     @Override
     public String open() {
-        String contentConcat = "Contenido de hijos: ";
+        StringBuilder contentConcat = new StringBuilder("Contenido de hijos: ");
         for (Component child: children) {
-            contentConcat += child.open();
-            contentConcat += " - ";
+            contentConcat.append(child.open());
+            contentConcat.append(" - ");
         }
-        return contentConcat;
+        return contentConcat.toString();
     }
 
     @Override
-    public void save() {
-        System.out.println("DEBUG: SAVES FOLDER FILE");
+    public String save() {
+        return "SAVES FOLDER";
     }
 
     @Override
-    public void delete() {
-        System.out.println("DEBUG: DELETES FOLDER FILE");
-
+    public String delete() {
+        return "DELETES FOLDER FILE";
     }
 
     @Override
